@@ -1,8 +1,8 @@
 package br.com.haan.ct.controllers;
 
-import br.com.haan.ct.entities.Doenca;
+import br.com.haan.ct.entities.Turma;
 import br.com.haan.ct.modelo.RespostaModelo;
-import br.com.haan.ct.services.DoencaService;
+import br.com.haan.ct.services.TurmaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,29 +16,29 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "*")
-public class DoencaController {
+public class TurmaController {
     
     
     @Autowired
-    private DoencaService doencaService;
+    private TurmaService turmaService;
     
-    @GetMapping("/doencas")
-    public Iterable<Doenca> listar(){
-        return doencaService.listar();
+    @GetMapping("/turma")
+    public Iterable<Turma> listar(){
+        return turmaService.listar();
     }
     
-    @PostMapping("/doencas")
-    public ResponseEntity<?> salvar (@RequestBody Doenca doenca){
-        return doencaService.salvar(doenca,"Salvar");
+    @PostMapping("/turma")
+    public ResponseEntity<?> salvar (@RequestBody Turma turma){
+        return turmaService.salvar(turma,"Salvar");
     }
     
-    @PutMapping("/doencas/{id}")
-    public ResponseEntity<?> atualizar (@RequestBody Doenca doenca){
-        return doencaService.salvar(doenca,"Atualizar");
+    @PutMapping("/turma/{id}")
+    public ResponseEntity<?> atualizar (@RequestBody Turma turma){
+        return turmaService.salvar(turma,"Atualizar");
     }
     
-    @DeleteMapping("/doencas/{id}")
+    @DeleteMapping("/turma/{id}")
     public ResponseEntity<RespostaModelo> deletar (@PathVariable Long id){
-        return doencaService.remover(id);
+        return turmaService.remover(id);
     }
 }

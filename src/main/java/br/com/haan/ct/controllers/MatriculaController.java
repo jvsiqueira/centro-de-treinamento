@@ -1,8 +1,8 @@
 package br.com.haan.ct.controllers;
 
-import br.com.haan.ct.entities.Doenca;
+import br.com.haan.ct.entities.Matricula;
 import br.com.haan.ct.modelo.RespostaModelo;
-import br.com.haan.ct.services.DoencaService;
+import br.com.haan.ct.services.MatriculaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,29 +16,29 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "*")
-public class DoencaController {
+public class MatriculaController {
     
     
     @Autowired
-    private DoencaService doencaService;
+    private MatriculaService matriculaService;
     
-    @GetMapping("/doencas")
-    public Iterable<Doenca> listar(){
-        return doencaService.listar();
+    @GetMapping("/matricula")
+    public Iterable<Matricula> listar(){
+        return matriculaService.listar();
     }
     
-    @PostMapping("/doencas")
-    public ResponseEntity<?> salvar (@RequestBody Doenca doenca){
-        return doencaService.salvar(doenca,"Salvar");
+    @PostMapping("/matricula")
+    public ResponseEntity<?> salvar (@RequestBody Matricula matricula){
+        return matriculaService.salvar(matricula,"Salvar");
     }
     
-    @PutMapping("/doencas/{id}")
-    public ResponseEntity<?> atualizar (@RequestBody Doenca doenca){
-        return doencaService.salvar(doenca,"Atualizar");
+    @PutMapping("/matricula/{id}")
+    public ResponseEntity<?> atualizar (@RequestBody Matricula matricula){
+        return matriculaService.salvar(matricula,"Atualizar");
     }
     
-    @DeleteMapping("/doencas/{id}")
+    @DeleteMapping("/matricula/{id}")
     public ResponseEntity<RespostaModelo> deletar (@PathVariable Long id){
-        return doencaService.remover(id);
+        return matriculaService.remover(id);
     }
 }
