@@ -1,5 +1,6 @@
 package br.com.haan.ct.controllers;
 
+import br.com.haan.ct.dto.DescricaoModalidadeQuantidadeAluno;
 import br.com.haan.ct.entities.Matricula;
 import br.com.haan.ct.modelo.RespostaModelo;
 import br.com.haan.ct.services.MatriculaService;
@@ -25,6 +26,10 @@ public class MatriculaController {
     @GetMapping("/matricula")
     public Iterable<Matricula> listar(){
         return matriculaService.listar();
+    }
+    @GetMapping("/numeroMatriculasPorModalidade")
+    public Iterable<DescricaoModalidadeQuantidadeAluno> numeroMatriculasPorModalidade(){
+        return matriculaService.numeroMatriculasPorModalidade();
     }
     
     @PostMapping("/matricula")
