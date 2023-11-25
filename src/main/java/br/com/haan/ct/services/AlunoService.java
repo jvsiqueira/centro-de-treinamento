@@ -1,5 +1,5 @@
 package br.com.haan.ct.services;
-
+import br.com.haan.ct.dto.NomeAlunoEmDebito;
 import br.com.haan.ct.entities.Aluno;
 import br.com.haan.ct.modelo.RespostaModelo;
 import br.com.haan.ct.repositories.AlunoRepository;
@@ -45,4 +45,9 @@ public class AlunoService {
         respostaModelo.setMensagem("O aluno foi removido com sucesso.");
          return new ResponseEntity<RespostaModelo>(respostaModelo, HttpStatus.OK);
     }
+    
+     public Iterable<NomeAlunoEmDebito> numeroMatriculaAlunosEmDebito(){
+        return alunoRepository.numeroMatriculaAlunosEmDebito();
+    }
 }
+  
