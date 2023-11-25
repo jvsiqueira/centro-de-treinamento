@@ -47,7 +47,8 @@ public class AlunoService {
     }
     
      public Iterable<NomeAlunoEmDebito> numeroMatriculaAlunosEmDebito(){
-        return alunoRepository.numeroMatriculaAlunosEmDebito();
+        //return alunoRepository.numeroMatriculaAlunosEmDebito();
+        return null;
     }
 }
   
