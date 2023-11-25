@@ -39,7 +39,8 @@ public class MatriculaService {
     }
     
     public Iterable<DescricaoModalidadeQuantidadeAluno> numeroMatriculasPorModalidade(){
-        return matriculaRepository.numeroMatriculasPorModalidade();
+        //return matriculaRepository.numeroMatriculasPorModalidade();
+        return null;
     }
     
 }

@@ -10,7 +10,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MatriculaRepository extends CrudRepository<Matricula,Long >{
     
+
     @Query(value = "SELECT modalidade.descricao as descricaoModalidade, COUNT(matricula.id) as quantidadeAluno  FROM matricula, modalidade, turma where   matricula.turma_id = turma.id   and turma.modalidade_id = modalidade.id   GROUP BY  modalidade.descricao", nativeQuery = true)
     public Iterable<DescricaoModalidadeQuantidadeAluno> numeroMatriculasPorModalidade();
+
     
 }

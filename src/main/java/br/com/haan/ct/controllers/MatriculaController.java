@@ -27,11 +27,12 @@ public class MatriculaController {
     public Iterable<Matricula> listar(){
         return matriculaService.listar();
     }
+
     @GetMapping("/numeroMatriculasPorModalidade")
     public Iterable<DescricaoModalidadeQuantidadeAluno> numeroMatriculasPorModalidade(){
         return matriculaService.numeroMatriculasPorModalidade();
     }
-    
+
     @PostMapping("/matricula")
     public ResponseEntity<?> salvar (@RequestBody Matricula matricula){
         return matriculaService.salvar(matricula,"Salvar");
