@@ -4,7 +4,6 @@ import br.com.haan.ct.dto.DescricaoModalidadeQuantidadeAluno;
 import br.com.haan.ct.entities.Matricula;
 import br.com.haan.ct.modelo.RespostaModelo;
 import br.com.haan.ct.repositories.MatriculaRepository;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +39,10 @@ public class MatriculaService {
     
     public Iterable<DescricaoModalidadeQuantidadeAluno> numeroMatriculasPorModalidade(){
         return matriculaRepository.numeroMatriculasPorModalidade();
+    }
+
+    public Iterable<DescricaoModalidadeQuantidadeAluno> numerosMatriculasPorGraduacao(){
+        return matriculaRepository.numeroMatriculasPorGraduacao();
     }
     
 }
