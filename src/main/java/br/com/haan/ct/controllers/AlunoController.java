@@ -1,5 +1,6 @@
 package br.com.haan.ct.controllers;
 
+import br.com.haan.ct.dto.NomeAlunoEmDebito;
 import br.com.haan.ct.entities.Aluno;
 import br.com.haan.ct.modelo.RespostaModelo;
 import br.com.haan.ct.services.AlunoService;
@@ -38,4 +39,10 @@ public class AlunoController {
     public ResponseEntity<RespostaModelo> deletar (@PathVariable Long id){
         return alunoService.remover(id);
     }
+    
+    @GetMapping("/numeroMatriculaAlunosEmDebito")
+    public Iterable<NomeAlunoEmDebito> numeroMatriculaAlunosEmDebito(){
+        return alunoService.numeroMatriculaAlunosEmDebito();
+    }
+
 }
