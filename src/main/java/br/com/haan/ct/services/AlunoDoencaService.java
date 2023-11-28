@@ -24,6 +24,10 @@ public class AlunoDoencaService {
         return alunoDoencaRepository.findAll();
     }
 
+    public  Iterable < DescricaoDoencaQuantidadeModalidade > numeroDoencaPorModalidade (){
+        return  alunoDoencaRepository.numeroDoencaPorModalidade ();
+    }
+
     public ResponseEntity<?> salvar(AlunoDoenca alunoDoenca, String acao) {
         if (acao.equals("Salvar")) {
             return new ResponseEntity<AlunoDoenca>(alunoDoencaRepository.save(alunoDoenca), HttpStatus.CREATED);

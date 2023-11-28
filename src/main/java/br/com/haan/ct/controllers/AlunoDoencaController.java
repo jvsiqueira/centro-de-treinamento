@@ -21,6 +21,11 @@ public class AlunoDoencaController {
     
     @Autowired
     private AlunoDoencaService alunoDoencaService;
+
+    @GetMapping("/numeroDoencaPorModalidade")
+    public  Iterable < DescricaoDoencaQuantidadeModalidade > numeroDoencaPorModalidade (){
+        return  alunoDoencaService.numeroDoencaPorModalidade();
+    }
     
     @GetMapping("/alunoDoencas")
     public Iterable<AlunoDoenca> listar(){
