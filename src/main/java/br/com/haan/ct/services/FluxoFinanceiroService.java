@@ -62,4 +62,8 @@ public class FluxoFinanceiroService {
             return false;
         }
     }
+    
+    public double lucroPorMes(int mes) {
+        return fluxoFinanceiroRepository.lucroPorMes(mes);
+    }
 }

@@ -32,4 +32,9 @@ public class FluxoFinanceiroController {
     public ResponseEntity<RespostaModelo> deletar (@PathVariable Long id){
         return fluxoFinanceiroService.remover(id);
     }
+    
+    @GetMapping("/lucroPorMes/{mes}")
+    public double lucroPorMes(@PathVariable int mes){
+        return fluxoFinanceiroService.lucroPorMes(mes);
+    }
 }
