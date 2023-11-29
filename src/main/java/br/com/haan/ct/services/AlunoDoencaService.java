@@ -1,5 +1,6 @@
 package br.com.haan.ct.services;
 
+import br.com.haan.ct.dto.DescricaoDoencaQuantidadeModalidade;
 import br.com.haan.ct.entities.Aluno;
 import br.com.haan.ct.entities.AlunoDoenca;
 import br.com.haan.ct.modelo.RespostaModelo;
@@ -22,6 +23,10 @@ public class AlunoDoencaService {
 
     public Iterable<AlunoDoenca> listar() {
         return alunoDoencaRepository.findAll();
+    }
+
+    public  Iterable < DescricaoDoencaQuantidadeModalidade > numeroDoencaPorModalidade (){
+        return  alunoDoencaRepository.numeroDoencaPorModalidade ();
     }
 
     public ResponseEntity<?> salvar(AlunoDoenca alunoDoenca, String acao) {
