@@ -1,5 +1,6 @@
 package br.com.haan.ct.controllers;
 
+import br.com.haan.ct.dto.DescricaoDoencaQuantidadeModalidade;
 import br.com.haan.ct.entities.Aluno;
 import br.com.haan.ct.entities.AlunoDoenca;
 import br.com.haan.ct.modelo.RespostaModelo;
@@ -19,11 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class AlunoDoencaController {
     
     
+    
     @Autowired
     private AlunoDoencaService alunoDoencaService;
 
     @GetMapping("/numeroDoencaPorModalidade")
-    public  Iterable < DescricaoDoencaQuantidadeModalidade > numeroDoencaPorModalidade (){
+    public  Iterable <DescricaoDoencaQuantidadeModalidade> numeroDoencaPorModalidade (){
         return  alunoDoencaService.numeroDoencaPorModalidade();
     }
     

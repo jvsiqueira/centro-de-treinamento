@@ -1,5 +1,6 @@
 package br.com.haan.ct.services;
 
+import br.com.haan.ct.dto.DescricaoDoencaQuantidadeModalidade;
 import br.com.haan.ct.entities.Aluno;
 import br.com.haan.ct.entities.AlunoDoenca;
 import br.com.haan.ct.modelo.RespostaModelo;
