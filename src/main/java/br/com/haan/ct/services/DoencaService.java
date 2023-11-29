@@ -1,5 +1,6 @@
 package br.com.haan.ct.services;
 
+import br.com.haan.ct.dto.DoencaMaisComum;
 import br.com.haan.ct.entities.Aluno;
 import br.com.haan.ct.entities.Doenca;
 import br.com.haan.ct.modelo.RespostaModelo;
@@ -41,5 +42,8 @@ public class DoencaService {
         doencaRepository.deleteById(id);
         respostaModelo.setMensagem("O aluno foi removido com sucesso.");
         return new ResponseEntity<RespostaModelo>(respostaModelo, HttpStatus.OK);
+    }
+    public Iterable<DoencaMaisComum> nomeDoencaMaisComum(){
+        return doencaRepository.nomeDoencaMaiscomum();
     }
 }

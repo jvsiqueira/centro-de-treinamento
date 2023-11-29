@@ -1,5 +1,6 @@
 package br.com.haan.ct.controllers;
 
+import br.com.haan.ct.dto.DoencaMaisComum;
 import br.com.haan.ct.entities.Doenca;
 import br.com.haan.ct.modelo.RespostaModelo;
 import br.com.haan.ct.services.DoencaService;
@@ -40,5 +41,9 @@ public class DoencaController {
     @DeleteMapping("/doencas/{id}")
     public ResponseEntity<RespostaModelo> deletar (@PathVariable Long id){
         return doencaService.remover(id);
+    }
+    @GetMapping("/doencaMaisComum")
+    public Iterable<DoencaMaisComum> nomeDoencaMaisComum(){
+        return doencaService.nomeDoencaMaisComum();
     }
 }
