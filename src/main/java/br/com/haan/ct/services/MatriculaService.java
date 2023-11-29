@@ -1,5 +1,6 @@
 package br.com.haan.ct.services;
 
+import br.com.haan.ct.dto.DescricaoModalidadePorIdade;
 import br.com.haan.ct.dto.DescricaoModalidadeQuantidadeAluno;
 import br.com.haan.ct.entities.Matricula;
 import br.com.haan.ct.modelo.RespostaModelo;
@@ -37,10 +38,13 @@ public class MatriculaService {
         respostaModelo.setMensagem("O aluno foi removido com sucesso.");
         return new ResponseEntity<RespostaModelo>(respostaModelo, HttpStatus.OK);
     }
-    
-    public Iterable<DescricaoModalidadeQuantidadeAluno> numeroMatriculasPorModalidade(){
-        //return matriculaRepository.numeroMatriculasPorModalidade();
-        return null;
+
+    public Iterable<DescricaoModalidadeQuantidadeAluno> numeroMatriculasPorModalidade() {
+        return matriculaRepository.numeroMatriculasPorModalidade();
     }
     
+    public Iterable<DescricaoModalidadePorIdade> descricaoModalidadePorIdade() {
+        return matricula
+    }
+
 }
