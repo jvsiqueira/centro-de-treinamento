@@ -41,12 +41,10 @@ public class MatriculaService {
 
     public Iterable<DescricaoModalidadeQuantidadeAluno> numeroMatriculasPorModalidade() {
         return matriculaRepository.numeroMatriculasPorModalidade();
-
     }
     
     public Iterable<DescricaoModalidadePorIdade> descricaoModalidadePorIdade() {
-        return matriculaRepository.descricaoModalidadePorIdade();
-
+        return matricula
     }
 
 }
