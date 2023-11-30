@@ -1,5 +1,6 @@
 package br.com.haan.ct.services;
 
+import br.com.haan.ct.dto.MelhoresModalidades;
 import br.com.haan.ct.entities.Pagamento;
 import br.com.haan.ct.modelo.RespostaModelo;
 import br.com.haan.ct.repositories.PagamentoRepository;
@@ -13,13 +14,17 @@ public class PagamentoService {
 
     @Autowired
     private PagamentoRepository pagamentoRepository;
-
+    
     // aula do dia 10/08
     @Autowired
     private RespostaModelo respostaModelo;
 
     public Iterable<Pagamento> listar() {
         return pagamentoRepository.findAll();
+    }
+
+    public Iterable<MelhoresModalidades> listarMelhoresModalidades() {
+        return pagamentoRepository.melhoresModalidades();
     }
 
     public ResponseEntity<?> salvar(Pagamento pagamento, String acao) {

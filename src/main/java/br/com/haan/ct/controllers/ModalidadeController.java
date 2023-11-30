@@ -1,10 +1,13 @@
 package br.com.haan.ct.controllers;
 
+import br.com.haan.ct.dto.MelhoresModalidades;
 import br.com.haan.ct.entities.Aluno;
 import br.com.haan.ct.entities.Modalidade;
 import br.com.haan.ct.modelo.RespostaModelo;
 import br.com.haan.ct.services.AlunoService;
 import br.com.haan.ct.services.ModalidadeService;
+import br.com.haan.ct.services.PagamentoService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,10 +24,16 @@ public class ModalidadeController {
     
     @Autowired
     private ModalidadeService modalidadeService;
+    private PagamentoService pagamentoService;
     
     @GetMapping("/modalidades")
     public Iterable<Modalidade> listar(){
         return modalidadeService.listar();
+    }
+    
+     @GetMapping("/modalidades/bests")
+    public Iterable<MelhoresModalidades> listarMelhores(){
+        return pagamentoService.listarMelhoresModalidades();
     }
     
     @PostMapping("/modalidades")
