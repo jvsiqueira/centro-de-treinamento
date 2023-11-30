@@ -44,7 +44,7 @@ public class MatriculaService {
     }
     
     public Iterable<DescricaoModalidadePorIdade> descricaoModalidadePorIdade() {
-        return matricula
+        return matriculaRepository.descricaoModalidadePorIdade();
     }
 
 }
